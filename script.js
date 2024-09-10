@@ -75,7 +75,7 @@ console.log("arithmethic chain remainder", mathChainRemainder);
 
 const isUnder26 = n1 < 26 || n2 < 26 || n3 < 26 || n4 < 26;
 const isValidV2 = isSum50 && isTwoOdd && isUnder26 && isUnique;
-console.log (`The four numbers are valid according to the provided criteria: ${isValidV2}.`)
+console.log (`The four numbers are valid according to the provided criteria: ${isValidV2}.`);
 
 // == HOMEWORK PART 2 START ===============================
 
