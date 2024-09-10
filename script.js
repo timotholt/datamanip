@@ -78,8 +78,57 @@ const isValidV2 = isSum50 && isTwoOdd && isUnder26 && isUnique;
 console.log (`The four numbers are valid according to the provided criteria: ${isValidV2}.`);
 
 // == HOMEWORK PART 2 START ===============================
+//
+// The distance of the trip, in total, is 1,500 miles.
+// Your car’s fuel efficiency is as follows:
+// At 55 miles per hour, you get 30 miles per gallon.
+// At 60 miles per hour, you get 28 miles per gallon.
+// At 75 miles per hour, you get 23 miles per gallon.
+// You have a fuel budget of $175.
+// The average cost of fuel is $3 per gallon.
 
-// == HOMEWORK END ========================================
+console.log("homework part 2s");
+
+const tripDistance = 1500;
+const fuelEfficiency55mph = 30;
+const fuelEfficiency60mph = 28;
+const fuelEfficiency75mph = 23;
+const fuelBudget = 175;
+const fuelAveCost = 3;
+
+// How many gallons of fuel will you need for the entire trip?
+const gallonsForTripAt55mph = tripDistance / fuelEfficiency55mph;
+const gallonsForTripAt60mph = tripDistance / fuelEfficiency60mph;
+const gallonsForTripAt75mph = tripDistance / fuelEfficiency75mph;
+console.log("Gallons of fuel at 55mph =", gallonsForTripAt55mph);
+console.log("Gallons of fuel at 60mph =", gallonsForTripAt60mph);
+console.log("Gallons of fuel at 75mph =", gallonsForTripAt75mph);
+
+// Will your budget be enough to cover the fuel expense?
+const fuelExpenseForTripAt55mph = gallonsForTripAt55mph * fuelAveCost;
+const fuelExpenseForTripAt60mph = gallonsForTripAt60mph * fuelAveCost;
+const fuelExpenseForTripAt75mph = gallonsForTripAt75mph * fuelAveCost;
+const inFuelBudgetAt55mph = fuelExpenseForTripAt55mph < fuelBudget;
+const inFuelBudgetAt60mph = fuelExpenseForTripAt60mph < fuelBudget;
+const inFuelBudgetAt75mph = fuelExpenseForTripAt75mph < fuelBudget;
+
+console.log (`Fuel costs at 55 mph = ${fuelExpenseForTripAt55mph}, in budget = ${inFuelBudgetAt55mph}.`);
+console.log (`Fuel costs at 60 mph = ${fuelExpenseForTripAt60mph}, in budget = ${inFuelBudgetAt60mph}.`);
+console.log (`Fuel costs at 75 mph = ${fuelExpenseForTripAt75mph}, in budget = ${inFuelBudgetAt75mph}.`);
+
+// How long will the trip take, in hours?
+const tripTimeAt55mphHours = tripDistance / 55; 
+const tripTimeAt60mphHours = tripDistance / 60;
+const tripTimeAt75mphHours = tripDistance / 75;
+const tripTimeAt55mphMins = (tripDistance % 55) / 55 * 60; 
+const tripTimeAt60mphMins = (tripDistance % 60) / 60 * 60;
+const tripTimeAt75mphMins = (tripDistance % 75) / 75 * 60;
+
+console.log (`Trip time at 55 mph = ${Math.floor(tripTimeAt55mphHours)} hours, ${Math.floor(tripTimeAt55mphMins)} minutes.`);
+console.log (`Trip time at 60 mph = ${Math.floor(tripTimeAt60mphHours)} hours, ${Math.floor(tripTimeAt60mphMins)} minutes.`);
+console.log (`Trip time at 75 mph = ${Math.floor(tripTimeAt75mphHours)} hours, ${Math.floor(tripTimeAt75mphMins)} minutes.`);
+
+// = HOMEWORK END ========================================
 
 console.log("Goodbye world from javascript file");
 
